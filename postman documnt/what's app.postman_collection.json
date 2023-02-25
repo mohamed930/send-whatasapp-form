@@ -1,0 +1,75 @@
+{
+	"info": {
+		"_postman_id": "d1f51857-2fa3-47c5-be53-53ab4d8fed62",
+		"name": "what's app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "11173679"
+	},
+	"item": [
+		{
+			"name": "Step 2: Send a Test Message",
+			"item": [
+				{
+					"name": "Send Test Message",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"messaging_product\": \"whatsapp\",\n    \"to\": \"{{Recipient-Phone-Number}}\",\n    \"type\": \"template\",\n    \"template\": {\n        \"name\": \"hello_world\",\n        \"language\": {\n            \"code\": \"en_US\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://graph.facebook.com/{{Version}}/{{Phone-Number-ID}}/messages"
+					},
+					"response": [
+						{
+							"name": "Send Test Message",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{User-Access-Token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messaging_product\": \"whatsapp\",\n    \"to\": \"{{Recipient-Phone-Number}}\",\n    \"type\": \"template\",\n    \"template\": {\n        \"name\": \"hello_world\",\n        \"language\": {\n            \"code\": \"en_US\"\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://graph.facebook.com/{{Version}}/{{Phone-Number-ID}}/messages"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"messaging_product\": \"whatsapp\",\n    \"contacts\": [\n        {\n            \"input\": \"48XXXXXXXXX\",\n            \"wa_id\": \"48XXXXXXXXX \"\n        }\n    ],\n    \"messages\": [\n        {\n            \"id\": \"wamid.gBGGSFcCNEOPAgkO_KJ55r4w_ww\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			],
+			"description": "In the Getting Started tab:\n\n1.  Select your test phone number in the From field. (Unless you have registered other phone numbers, this will be the only phone number in From.)\n2.  Enter the phone number you would like to message in the To field. Ensure the number is correct, and that you want to add it to your list of 5 possible message recipients —as you add phone numbers, follow the prompts on the screen to verify you have access to them. Once this number has been added, it cannot be removed from your list. Note: This limitation is only for WhatsApp-provided test phone numbers. Real phone numbers that you register do not have a limit on the number of recipients.\n3.  Once you enter a recipient phone number, the code sample on the page will be updated to demonstrate an API call that sends a test message to that number. The code sample will look like this:\n    \n\n```\ncurl -i -X POST \\\nhttps://graph.facebook.com/{{Version}}/FROM_PHONE_NUMBER_ID/messages \\\n-H 'Authorization: Bearer ACCESS_TOKEN' \\\n-H 'Content-Type: application/json' \\\n-d '{ \"messaging_product\": \"whatsapp\", \"to\": \"TO_PHONE_NUMBER\", \"type\": \"template\", \"template\": { \"name\": \"hello_world\", \"language\": { \"code\": \"en_US\" } } }'Copy Code\n\n```\n\n4\\. Click **Send message** to send the first message. As an alternative, you can copy the code sample provided and execute it in your Terminal or in Postman. You have just sent a test message!\n\nThe code sample on the page is formatted for use in Unix-style terminal shells, and is expected to work on MacOS and distributions of Gnu/Linux. If you use Windows, we suggest you perform your first API call using Postman, to avoid platform-related cURL formatting concerns. If you are a Windows 10 user, cURL is available, but requires a different syntax than the one shown in the Getting Started tab to execute in PowerShell or cmd.exe. For more information, see [cURL Comes to Windows](https://devblogs.microsoft.com/commandline/tar-and-curl-come-to-windows/) or [cURL for Windows](https://curl.se/windows/). If you have access to the [Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/about), you can also consider launching a Linux distribution and using its terminal."
+		}
+	]
+}
