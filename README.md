@@ -10,3 +10,6 @@ instruction to run programme:
   4) create two variables in varaibles.js
         . baseurl
         . token
+        
+for more details show our presentation:
+    https://docs.google.com/presentation/d/1LY4cvHHMd8sDc-K9-jlzPpZdcm2qhf2l/edit?usp=sharing&ouid=103447525835319967881&rtpof=true&sd=true
